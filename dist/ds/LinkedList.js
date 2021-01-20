@@ -100,6 +100,26 @@ var LinkedList = /** @class */ (function () {
             }
         });
     };
+    LinkedList.prototype.indexOf = function (index) {
+        var e_1, _a;
+        var currentIndex = 0;
+        try {
+            for (var _b = __values(this), _c = _b.next(); !_c.done; _c = _b.next()) {
+                var element = _c.value;
+                if (currentIndex === index)
+                    return element;
+                currentIndex++;
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+        return null;
+    };
     LinkedList.prototype.removeAt = function (index) {
         if (index < 0 || index + 1 > this.length)
             return false;
@@ -250,7 +270,7 @@ var LinkedList = /** @class */ (function () {
         return false;
     };
     LinkedList.prototype.add = function () {
-        var e_1, _a;
+        var e_2, _a;
         var items = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             items[_i] = arguments[_i];
@@ -267,12 +287,12 @@ var LinkedList = /** @class */ (function () {
                 this.length++;
             }
         }
-        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        catch (e_2_1) { e_2 = { error: e_2_1 }; }
         finally {
             try {
                 if (items_1_1 && !items_1_1.done && (_a = items_1.return)) _a.call(items_1);
             }
-            finally { if (e_1) throw e_1.error; }
+            finally { if (e_2) throw e_2.error; }
         }
     };
     LinkedList.prototype.addFirst = function (item) {

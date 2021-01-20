@@ -32,6 +32,16 @@ export class LinkedList<E> {
     }
   }
 
+
+  indexOf(index: number): E | null {
+    let currentIndex = 0;
+    for (const element of this) {
+      if (currentIndex === index) return element;
+      currentIndex ++;
+    }
+    return null;
+  }
+
   removeAt(index: number): boolean {
     if (index < 0 || index + 1 > this.length) return false;
 

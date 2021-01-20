@@ -11,6 +11,7 @@ export declare class LinkedList<E> {
     getFirstElement(): E | null;
     getLastElement(): E | null;
     [Symbol.iterator](): Generator<E, void, unknown>;
+    indexOf(index: number): E | null;
     removeAt(index: number): boolean;
     removeElements(element: E): void;
     removeElementsWhere(test: TestLinkedListElement<E>): void;
