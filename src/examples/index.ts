@@ -1,21 +1,23 @@
-import {LinkedList} from '../index';
+import {Stack} from '../index';
 
 
 
-const list = new LinkedList<number>();
-
-list.add(1);
-list.add(3);
-list.add(8);
-list.add(1);
-list.add(2);
-list.add(1);
+const myStack: Stack<number> = new Stack(10);
 
 
-list.removeElements(1);
+myStack.push(1);
+myStack.push(2);
+myStack.push(3);
+myStack.push(4);
+myStack.push(5);
 
 
-console.log(...list)
 
+console.log(myStack.peek())
+console.log(myStack.pop())
+console.log(myStack.pop())
+myStack.push(14);
+console.log(myStack.pop())
+console.log(myStack.pop())
+console.log(myStack.pop())
 
-console.log('size', list.size())
