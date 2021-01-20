@@ -1,0 +1,11 @@
+{
+  "name": "datastructuresjs",
+  "version": "1.0.0",
+  "description": "Data Structures for Javascript",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc --watch"
+  },
+  "author": "Kusi Musah Hussein",
+  "license": "MIT"
+}
