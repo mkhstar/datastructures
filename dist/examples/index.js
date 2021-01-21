@@ -1,18 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("../index");
-// const myStack: Stack<number> = new Stack(10);
-// myStack.push(1);
-// myStack.push(2);
-// myStack.push(3);
-// myStack.push(4);
-// myStack.push(5);
-// console.log(myStack.peek())
-// console.log(myStack.pop())
-// console.log(myStack.pop())
-// myStack.push(14);
-// console.log(myStack.pop())
-// console.log(myStack.pop())
-// console.log(myStack.pop())
-var list = new index_1.LinkedList(1, 2, 3, 4, 5);
-console.log(list.indexOf(2));
+var queue = new index_1.Queue(4);
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+queue.enqueue(4);
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+queue.enqueue(7);
+queue.enqueue(7);
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.isFull);
+console.log(queue.isEmpty);

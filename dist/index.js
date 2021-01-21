@@ -12,3 +12,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./ds/LinkedList"), exports);
 __exportStar(require("./ds/Stack"), exports);
+__exportStar(require("./ds/Queue"), exports);
