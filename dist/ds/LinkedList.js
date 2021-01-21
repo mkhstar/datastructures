@@ -60,6 +60,11 @@ var __values = (this && this.__values) || function(o) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LinkedList = void 0;
 var LinkedList = /** @class */ (function () {
+    /**
+     * Constructs a new linked list
+     * @constructor
+     * @param {Array<E>} initialItems - The initial items in the linked list
+     */
     function LinkedList() {
         var initialItems = [];
         for (var _i = 0; _i < arguments.length; _i++) {
@@ -71,13 +76,22 @@ var LinkedList = /** @class */ (function () {
         this.list = null;
         this.add.apply(this, __spread(initialItems));
     }
+    /**
+     * @return {number} The size of the linked list
+     */
     LinkedList.prototype.size = function () {
         return this.length;
     };
+    /**
+     * @return {E | null} The first element of the linked list
+     */
     LinkedList.prototype.getFirstElement = function () {
         var _a;
         return ((_a = this.first) === null || _a === void 0 ? void 0 : _a.getElement()) || null;
     };
+    /**
+     * @return {E | null} The last element of the linked list
+     */
     LinkedList.prototype.getLastElement = function () {
         var _a;
         return ((_a = this.last) === null || _a === void 0 ? void 0 : _a.getElement()) || null;
@@ -100,6 +114,11 @@ var LinkedList = /** @class */ (function () {
             }
         });
     };
+    /**
+     *
+     * @param {number} index The index to look up
+     * @return {E | null}
+     */
     LinkedList.prototype.indexOf = function (index) {
         var e_1, _a;
         var currentIndex = 0;
@@ -120,6 +139,11 @@ var LinkedList = /** @class */ (function () {
         }
         return null;
     };
+    /**
+     *  @description Removes an element at the specified index, returns true if an element was removed and false otherwise
+     * @param {number} removeAt The index of the element to remove
+     * @return boolean
+     */
     LinkedList.prototype.removeAt = function (index) {
         if (index < 0 || index + 1 > this.length)
             return false;
@@ -149,6 +173,10 @@ var LinkedList = /** @class */ (function () {
         }
         return false;
     };
+    /**
+     * @description Removes all elements that are equal to the element specified
+     * @param {E} element The element to look up
+     */
     LinkedList.prototype.removeElements = function (element) {
         if (!this.length)
             return;
@@ -171,6 +199,10 @@ var LinkedList = /** @class */ (function () {
             next = next.getNext();
         }
     };
+    /**
+     * @description Removes all elements that satisfy the test function
+     * @param {TestLinkedListElement} test
+     */
     LinkedList.prototype.removeElementsWhere = function (test) {
         if (!this.length)
             return;
@@ -193,6 +225,10 @@ var LinkedList = /** @class */ (function () {
             next = next.getNext();
         }
     };
+    /**
+     * @description Removes an element that is equal to the element specified
+     * @param {E} element
+     */
     LinkedList.prototype.removeElement = function (element) {
         if (!this.length)
             return false;
@@ -217,6 +253,10 @@ var LinkedList = /** @class */ (function () {
         }
         return false;
     };
+    /**
+     * @description Remove an element that satisfy the test function
+     * @param {TestLinkedListElement} test
+     */
     LinkedList.prototype.removeElementWhere = function (test) {
         if (!this.length)
             return false;
@@ -241,6 +281,11 @@ var LinkedList = /** @class */ (function () {
         }
         return false;
     };
+    /**
+     * @description inserts an element at the specified index
+     * @param {number} index
+     * @param {E} element
+     */
     LinkedList.prototype.insertAt = function (index, element) {
         if (index < 0 || index + 1 > this.length)
             return false;
@@ -269,6 +314,10 @@ var LinkedList = /** @class */ (function () {
         }
         return false;
     };
+    /**
+     * @description appends the elements at the tail (end) of the linked list
+     * @param {Array<E>} items
+     */
     LinkedList.prototype.add = function () {
         var e_2, _a;
         var items = [];
@@ -295,6 +344,10 @@ var LinkedList = /** @class */ (function () {
             finally { if (e_2) throw e_2.error; }
         }
     };
+    /**
+     * @description Adds an element to the linked list at the head
+     * @param {E} item
+     */
     LinkedList.prototype.addFirst = function (item) {
         if (!this.list) {
             this.first = this.last = this.list = new LinkedListNode(item);
@@ -303,6 +356,10 @@ var LinkedList = /** @class */ (function () {
             this.list = this.first = new LinkedListNode(item, this.list);
         this.length++;
     };
+    /**
+     * @description Adds an element to the tail of the linked list
+     * @param {E} item
+     */
     LinkedList.prototype.addLast = function (item) {
         if (!this.last) {
             this.first = this.last = this.list = new LinkedListNode(item);
@@ -311,6 +368,9 @@ var LinkedList = /** @class */ (function () {
             this.last = this.last.setNext(item);
         this.length++;
     };
+    /**
+     * @description Clears the linked list
+     */
     LinkedList.prototype.clear = function () {
         this.first = this.last = this.list = null;
         this.length = 0;

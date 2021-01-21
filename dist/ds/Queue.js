@@ -9,6 +9,10 @@ var Queue = /** @class */ (function () {
         this.list = new Array(capacity);
     }
     Object.defineProperty(Queue.prototype, "isEmpty", {
+        /**
+         * @description Is the Queue empty
+         * @return {boolean}
+         */
         get: function () {
             return this.head === -1 && this.tail === -1;
         },
@@ -16,8 +20,12 @@ var Queue = /** @class */ (function () {
         configurable: true
     });
     Object.defineProperty(Queue.prototype, "isFull", {
+        /**
+         * @description Is the Queue full
+         * @return {boolean}
+         */
         get: function () {
-            return this.head !== -1 && this.tail !== -1 && this.nextTailIndex === this.head;
+            return (this.head !== -1 && this.tail !== -1 && this.nextTailIndex === this.head);
         },
         enumerable: false,
         configurable: true
@@ -40,6 +48,10 @@ var Queue = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    /**
+     * @description Add an element to the queue
+     * @param {E} element
+     */
     Queue.prototype.enqueue = function (element) {
         if (this.isEmpty)
             this.head = this.tail = 0;
@@ -49,6 +61,10 @@ var Queue = /** @class */ (function () {
             this.tail = this.nextTailIndex;
         this.list[this.tail] = element;
     };
+    /**
+     * @description Remove an element from the queue and return it
+     * @return {E | null}
+     */
     Queue.prototype.dequeue = function () {
         if (this.isEmpty)
             return null;
@@ -60,6 +76,15 @@ var Queue = /** @class */ (function () {
         var result = this.list[this.head];
         this.head = this.nextHeadIndex;
         return result;
+    };
+    /**
+     * @description Returns the element at the head of the queue
+     * @return {E | null}
+     */
+    Queue.prototype.peek = function () {
+        if (this.isEmpty)
+            return null;
+        return this.list[this.head];
     };
     return Queue;
 }());

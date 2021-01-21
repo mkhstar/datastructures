@@ -1,11 +1,13 @@
 {
   "name": "@mkhstar/datastructures",
   "public": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Data Structures for Javascript",
   "main": "dist/index.js",
   "scripts": {
-    "start": "tsc --watch"
+    "start": "tsc --watch",
+    "build": "tsc",
+    "prepublish": "tsc"
   },
   "author": "Kusi Musah Hussein",
   "license": "MIT",
