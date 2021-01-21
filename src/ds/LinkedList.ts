@@ -3,6 +3,11 @@ interface TestLinkedListElement<E> {
 }
 
 export class LinkedList<E> {
+  /**
+   * Constructs a new linked list
+   * @constructor
+   * @param {Array<E>} initialItems - The initial items in the linked list
+   */
   constructor(...initialItems: Array<E>) {
     this.add(...initialItems);
   }
@@ -12,15 +17,24 @@ export class LinkedList<E> {
   private last: LinkedListNode<E> | null = null;
   private list: LinkedListNode<E> | null = null;
 
+  /**
+   * @return {number} The size of the linked list
+   */
   public size(): number {
     return this.length;
   }
 
-  getFirstElement() {
+  /**
+   * @return {E | null} The first element of the linked list
+   */
+  getFirstElement(): E | null {
     return this.first?.getElement() || null;
   }
 
-  getLastElement() {
+  /**
+   * @return {E | null} The last element of the linked list
+   */
+  getLastElement(): E | null {
     return this.last?.getElement() || null;
   }
 
@@ -32,16 +46,25 @@ export class LinkedList<E> {
     }
   }
 
-
+  /**
+   *
+   * @param {number} index The index to look up
+   * @return {E | null}
+   */
   indexOf(index: number): E | null {
     let currentIndex = 0;
     for (const element of this) {
       if (currentIndex === index) return element;
-      currentIndex ++;
+      currentIndex++;
     }
     return null;
   }
 
+  /**
+   *  @description Removes an element at the specified index, returns true if an element was removed and false otherwise
+   * @param {number} removeAt The index of the element to remove
+   * @return boolean
+   */
   removeAt(index: number): boolean {
     if (index < 0 || index + 1 > this.length) return false;
 
@@ -74,6 +97,11 @@ export class LinkedList<E> {
     return false;
   }
 
+  /**
+   * @description Removes all elements that are equal to the element specified
+   * @param {E} element The element to look up
+   */
+
   removeElements(element: E): void {
     if (!this.length) return;
 
@@ -97,6 +125,11 @@ export class LinkedList<E> {
       next = next.getNext();
     }
   }
+
+  /**
+   * @description Removes all elements that satisfy the test function
+   * @param {TestLinkedListElement} test
+   */
 
   removeElementsWhere(test: TestLinkedListElement<E>): void {
     if (!this.length) return;
@@ -122,6 +155,10 @@ export class LinkedList<E> {
     }
   }
 
+  /**
+   * @description Removes an element that is equal to the element specified
+   * @param {E} element
+   */
   removeElement(element: E): boolean {
     if (!this.length) return false;
 
@@ -148,6 +185,11 @@ export class LinkedList<E> {
 
     return false;
   }
+
+  /**
+   * @description Remove an element that satisfy the test function
+   * @param {TestLinkedListElement} test
+   */
 
   removeElementWhere(test: TestLinkedListElement<E>): boolean {
     if (!this.length) return false;
@@ -176,6 +218,11 @@ export class LinkedList<E> {
     return false;
   }
 
+  /**
+   * @description inserts an element at the specified index
+   * @param {number} index
+   * @param {E} element
+   */
   insertAt(index: number, element: E): boolean {
     if (index < 0 || index + 1 > this.length) return false;
 
@@ -211,6 +258,11 @@ export class LinkedList<E> {
     return false;
   }
 
+  /**
+   * @description appends the elements at the tail (end) of the linked list
+   * @param {Array<E>} items
+   */
+
   add(...items: Array<E>) {
     for (const item of items) {
       if (!this.last) {
@@ -222,6 +274,10 @@ export class LinkedList<E> {
     }
   }
 
+  /**
+   * @description Adds an element to the linked list at the head
+   * @param {E} item
+   */
   addFirst(item: E) {
     if (!this.list) {
       this.first = this.last = this.list = new LinkedListNode(item);
@@ -229,12 +285,21 @@ export class LinkedList<E> {
     this.length++;
   }
 
+  /**
+   * @description Adds an element to the tail of the linked list
+   * @param {E} item
+   */
+
   addLast(item: E) {
     if (!this.last) {
       this.first = this.last = this.list = new LinkedListNode(item);
     } else this.last = this.last.setNext(item);
     this.length++;
   }
+
+  /**
+   * @description Clears the linked list
+   */
 
   clear() {
     this.first = this.last = this.list = null;
