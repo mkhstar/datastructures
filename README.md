@@ -1,15 +1,15 @@
-# datastructuresjs
+# @mkhstar/datastructures
 
 > Popular data structures implemented in Typescript (Javascript)
 
-[![NPM](https://img.shields.io/npm/v/datastructuresjs.svg)](https://www.npmjs.com/package/datastructuresjs) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@mkhstar/datastructures.svg)](https://www.npmjs.com/package/@mkhstar/datastructures) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 #### npm
 
 ```sh
-$ npm install --save datastructuresjs
+$ npm install --save @mkhstar/datastructures
 ```
 
 

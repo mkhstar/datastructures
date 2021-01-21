@@ -1,5 +1,6 @@
 {
-  "name": "datastructuresjs",
+  "name": "@mkhstar/datastructures",
+  "public": true,
   "version": "1.0.0",
   "description": "Data Structures for Javascript",
   "main": "dist/index.js",
